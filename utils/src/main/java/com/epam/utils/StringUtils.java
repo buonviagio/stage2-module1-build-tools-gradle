@@ -22,7 +22,7 @@ public class StringUtils {
         }
         if (NumberUtils.isDigits(str)) {
             if(str.startsWith("0")){
-                return NumberUtils.toInt(str) > 0;
+                return false;
             }
             return NumberUtils.createBigInteger(str).compareTo(new BigInteger("0")) > 0;
         }

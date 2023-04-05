@@ -19,7 +19,7 @@ class UtilsTest {
         assertTrue(Utils.isAllPositiveNumbers(list1));
         assertFalse(Utils.isAllPositiveNumbers(list2));
         assertTrue(Utils.isAllPositiveNumbers(list3));
-        assertTrue(Utils.isAllPositiveNumbers(list4));
+        assertFalse(Utils.isAllPositiveNumbers(list4));
         assertFalse(Utils.isAllPositiveNumbers(list5));
     }
 }
