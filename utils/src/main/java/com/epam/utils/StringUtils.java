@@ -6,10 +6,11 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class StringUtils {
-    public static void main(String[] args) {
-        System.out.println(isPositiveNumber("4"));
-    }
+
     public static boolean isPositiveNumber(String str) {
+        if(str == null){
+            return false;
+        }
         if (NumberUtils.isCreatable(str)) {
             if (str.endsWith("d") || str.endsWith("D")) {
                 return NumberUtils.createDouble(str) > 0;
@@ -20,6 +21,9 @@ public class StringUtils {
             }
         }
         if (NumberUtils.isDigits(str)) {
+            if(str.startsWith("0")){
+                return NumberUtils.toInt(str) > 0;
+            }
             return NumberUtils.createBigInteger(str).compareTo(new BigInteger("0")) > 0;
         }
         if (str.contains(".")) {

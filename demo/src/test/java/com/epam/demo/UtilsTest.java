@@ -14,8 +14,12 @@ class UtilsTest {
         List<String> list1 = Arrays.asList("21", "32", "65", "74");
         List<String> list2 = Arrays.asList("21", "-32", "65", "74");
         List<String> list3 = Arrays.asList("21.7", "32", "65", "74");
+        List<String> list4 = Arrays.asList("21.7", "088", "65", "74");
+        List<String> list5 = Arrays.asList("21.7", null, "65", "74");
         assertTrue(Utils.isAllPositiveNumbers(list1));
         assertFalse(Utils.isAllPositiveNumbers(list2));
         assertTrue(Utils.isAllPositiveNumbers(list3));
+        assertTrue(Utils.isAllPositiveNumbers(list4));
+        assertFalse(Utils.isAllPositiveNumbers(list5));
     }
 }
