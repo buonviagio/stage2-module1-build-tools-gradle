@@ -2,6 +2,7 @@ package com.epam.utils;
 
 import org.apache.commons.lang3.math.NumberUtils;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class StringUtils {
@@ -20,6 +21,9 @@ public class StringUtils {
         }
         if (NumberUtils.isDigits(str)) {
             return NumberUtils.createBigInteger(str).compareTo(new BigInteger("0")) > 0;
+        }
+        if (str.contains(".")) {
+            return NumberUtils.createBigDecimal(str).compareTo(new BigDecimal("0.0")) > 0;
         }
         return false;
     }
